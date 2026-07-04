@@ -1,0 +1,335 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Blackbird Bell — Data, analytics & software for life and civil society</title>
+<meta name="description" content="Blackbird Bell is an independent consultancy that solves general-purpose data and analytics problems and builds software for life and civil society. Right-sized tools, shipped in days to weeks.">
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+<link rel="canonical" href="https://blackbirdbell.com/">
+<meta property="og:title" content="Blackbird Bell">
+<meta property="og:description" content="Data that answers. Software that serves. An independent consultancy for general-purpose data & analytics, and software for life and civil society.">
+<meta property="og:image" content="https://blackbirdbell.com/assets/og-image.png">
+<meta property="og:url" content="https://blackbirdbell.com/">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#0e0b07;
+    --ink-2:#161009;
+    --ink-3:#1f1810;
+    --gold:#d9a441;
+    --gold-bright:#eec06a;
+    --ember:#e0491f;
+    --cream:#f3ecdd;
+    --cream-dim:#c9bfa9;
+    --line:rgba(217,164,65,.18);
+    --maxw:1060px;
+    --serif:"Fraunces",Georgia,serif;
+    --sans:"Inter",-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{
+    background:var(--ink);
+    color:var(--cream);
+    font-family:var(--sans);
+    font-size:17px;
+    line-height:1.65;
+    -webkit-font-smoothing:antialiased;
+  }
+  ::selection{background:var(--gold);color:var(--ink)}
+  a{color:var(--gold-bright);text-decoration:none}
+  a:hover{text-decoration:underline;text-underline-offset:3px}
+  h1,h2,h3{font-family:var(--serif);font-weight:600;line-height:1.12;letter-spacing:-.01em}
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 24px}
+
+  /* ---------- nav ---------- */
+  nav{
+    position:sticky;top:0;z-index:10;
+    background:rgba(14,11,7,.82);
+    backdrop-filter:blur(12px);
+    border-bottom:1px solid var(--line);
+  }
+  .nav-inner{display:flex;align-items:center;justify-content:space-between;padding:14px 24px;max-width:var(--maxw);margin:0 auto}
+  .brand{display:flex;align-items:center;gap:11px;color:var(--cream);font-family:var(--serif);font-weight:700;font-size:1.15rem;letter-spacing:.01em}
+  .brand:hover{text-decoration:none}
+  .brand svg{width:30px;height:30px}
+  .nav-links{display:flex;gap:26px;font-size:.92rem;font-weight:500}
+  .nav-links a{color:var(--cream-dim)}
+  .nav-links a:hover{color:var(--gold-bright);text-decoration:none}
+  @media(max-width:640px){.nav-links{gap:16px;font-size:.85rem}.nav-links a.hide-sm{display:none}}
+
+  /* ---------- hero ---------- */
+  header{position:relative;overflow:hidden;border-bottom:1px solid var(--line)}
+  .hero{position:relative;padding:110px 24px 120px;max-width:var(--maxw);margin:0 auto;text-align:left}
+  .eyebrow{
+    display:inline-block;font-size:.8rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;
+    color:var(--gold);border:1px solid var(--line);border-radius:999px;padding:7px 16px;margin-bottom:34px;
+    background:rgba(217,164,65,.06);
+  }
+  .hero h1{font-size:clamp(2.5rem,6.4vw,4.4rem);max-width:15ch}
+  .hero h1 em{font-style:italic;color:var(--gold-bright)}
+  .hero p.lead{margin:28px 0 40px;font-size:clamp(1.05rem,2vw,1.25rem);color:var(--cream-dim);max-width:56ch}
+  .cta-row{display:flex;gap:16px;flex-wrap:wrap}
+  .btn{
+    display:inline-block;padding:14px 28px;border-radius:8px;font-weight:600;font-size:1rem;
+    transition:transform .15s ease,box-shadow .15s ease;
+  }
+  .btn:hover{text-decoration:none;transform:translateY(-2px)}
+  .btn-gold{background:linear-gradient(180deg,var(--gold-bright),var(--gold));color:var(--ink);box-shadow:0 4px 24px rgba(217,164,65,.25)}
+  .btn-gold:hover{box-shadow:0 8px 32px rgba(217,164,65,.4)}
+  .btn-ghost{border:1px solid var(--line);color:var(--cream)}
+  .btn-ghost:hover{border-color:var(--gold);color:var(--gold-bright)}
+
+  /* bell reverberation rings */
+  .rings{position:absolute;right:-160px;top:50%;transform:translateY(-50%);width:640px;height:640px;pointer-events:none;opacity:.9}
+  .rings circle{fill:none;stroke:var(--gold);stroke-width:1}
+  @media(prefers-reduced-motion:no-preference){
+    .rings circle{animation:ring 7s cubic-bezier(.2,.6,.4,1) infinite;transform-origin:center}
+    .rings circle:nth-child(2){animation-delay:1.75s}
+    .rings circle:nth-child(3){animation-delay:3.5s}
+    .rings circle:nth-child(4){animation-delay:5.25s}
+    @keyframes ring{
+      0%{transform:scale(.18);opacity:0}
+      12%{opacity:.5}
+      100%{transform:scale(1);opacity:0}
+    }
+  }
+  @media(prefers-reduced-motion:reduce){.rings circle{opacity:.08}}
+  .hero-mark{position:absolute;right:96px;top:50%;transform:translateY(-50%);width:132px;height:132px;filter:drop-shadow(0 6px 30px rgba(217,164,65,.3))}
+  @media(max-width:900px){.rings{right:-320px;opacity:.45}.hero-mark{display:none}}
+
+  /* ---------- sections ---------- */
+  section{padding:96px 0;border-bottom:1px solid var(--line)}
+  .kicker{font-size:.8rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--ember);margin-bottom:14px}
+  section h2{font-size:clamp(1.8rem,3.6vw,2.6rem);margin-bottom:18px}
+  .section-lead{color:var(--cream-dim);max-width:60ch;margin-bottom:52px;font-size:1.08rem}
+
+  /* work cards */
+  .cards{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+  @media(max-width:820px){.cards{grid-template-columns:1fr}}
+  .card{
+    background:linear-gradient(180deg,var(--ink-3),var(--ink-2));
+    border:1px solid var(--line);border-radius:14px;padding:38px 34px;
+    transition:transform .2s ease,border-color .2s ease;
+  }
+  .card:hover{transform:translateY(-4px);border-color:rgba(217,164,65,.45)}
+  .card .glyph{font-size:1.6rem;margin-bottom:18px;display:block}
+  .card h3{font-size:1.45rem;margin-bottom:6px}
+  .card .tagline{font-family:var(--serif);font-style:italic;color:var(--gold-bright);margin-bottom:20px}
+  .card ul{list-style:none}
+  .card li{padding:9px 0 9px 26px;position:relative;color:var(--cream-dim);border-top:1px solid rgba(217,164,65,.09)}
+  .card li:first-child{border-top:none}
+  .card li::before{content:"";position:absolute;left:2px;top:19px;width:7px;height:7px;border-radius:50%;background:var(--ember)}
+  .card li strong{color:var(--cream);font-weight:600}
+
+  /* approach */
+  .steps{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;counter-reset:step}
+  @media(max-width:820px){.steps{grid-template-columns:1fr}}
+  .step{border:1px solid var(--line);border-radius:14px;padding:32px 28px;background:var(--ink-2)}
+  .step .num{font-family:var(--serif);font-size:2.4rem;color:var(--gold);opacity:.85;display:block;margin-bottom:12px;font-weight:600}
+  .step h3{font-size:1.25rem;margin-bottom:10px}
+  .step p{color:var(--cream-dim);font-size:.98rem}
+
+  /* poem */
+  .poem-grid{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center}
+  @media(max-width:820px){.poem-grid{grid-template-columns:1fr;gap:40px}}
+  blockquote{
+    font-family:var(--serif);font-size:1.35rem;line-height:1.7;color:var(--cream);
+    border-left:3px solid var(--gold);padding-left:28px;font-weight:400;
+  }
+  blockquote footer{margin-top:20px;font-family:var(--sans);font-size:.9rem;color:var(--cream-dim)}
+  blockquote footer a{color:var(--gold)}
+  .poem-note p{color:var(--cream-dim);margin-bottom:18px}
+  .poem-note p strong{color:var(--cream)}
+
+  /* about */
+  .about-grid{display:grid;grid-template-columns:180px 1fr;gap:48px;align-items:start}
+  @media(max-width:680px){.about-grid{grid-template-columns:1fr}}
+  .about-grid img{width:180px;height:180px;border-radius:14px;object-fit:cover;border:1px solid var(--line)}
+  .about-grid p{color:var(--cream-dim);margin-bottom:18px;max-width:62ch}
+  .about-grid p strong{color:var(--cream)}
+
+  /* contact */
+  #contact{text-align:center;border-bottom:none;padding-bottom:110px}
+  #contact h2{margin-bottom:14px}
+  #contact .section-lead{margin:0 auto 40px}
+  .social-row{margin-top:36px;display:flex;gap:28px;justify-content:center;font-size:.95rem;font-weight:500}
+  .social-row a{color:var(--cream-dim)}
+  .social-row a:hover{color:var(--gold-bright)}
+
+  footer.site{border-top:1px solid var(--line);padding:32px 24px;text-align:center;color:var(--cream-dim);font-size:.85rem}
+  footer.site .bell{color:var(--gold)}
+
+  /* scroll reveal */
+  .reveal{opacity:0;transform:translateY(22px);transition:opacity .7s ease,transform .7s ease}
+  .reveal.in{opacity:1;transform:none}
+  @media(prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a class="brand" href="#top" aria-label="Blackbird Bell home">
+      <svg viewBox="0 0 64 64" aria-hidden="true"><use href="/assets/favicon.svg#mark"/></svg>
+      Blackbird Bell
+    </a>
+    <div class="nav-links">
+      <a href="#work">Work</a>
+      <a href="#approach" class="hide-sm">Approach</a>
+      <a href="#name" class="hide-sm">The Name</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </div>
+</nav>
+
+<header id="top">
+  <svg class="rings" viewBox="0 0 640 640" aria-hidden="true">
+    <circle cx="320" cy="320" r="300"/>
+    <circle cx="320" cy="320" r="300"/>
+    <circle cx="320" cy="320" r="300"/>
+    <circle cx="320" cy="320" r="300"/>
+  </svg>
+  <svg class="hero-mark" viewBox="0 0 64 64" aria-hidden="true"><use href="/assets/favicon.svg#mark"/></svg>
+  <div class="hero">
+    <span class="eyebrow">Independent software &amp; data consultancy</span>
+    <h1>Data that <em>answers</em>.<br>Software that <em>serves</em>.</h1>
+    <p class="lead">Blackbird Bell solves general-purpose data and analytics problems, and builds software for life and civil society — right-sized tools shipped in days to weeks, not quarters.</p>
+    <div class="cta-row">
+      <a class="btn btn-gold" href="mailto:ryan@blackbirdbell.com?subject=Let%27s%20talk">Start a conversation</a>
+      <a class="btn btn-ghost" href="#work">See the work</a>
+    </div>
+  </div>
+</header>
+
+<section id="work">
+  <div class="wrap">
+    <p class="kicker reveal">What I do</p>
+    <h2 class="reveal">Two kinds of problems, one way of working.</h2>
+    <p class="section-lead reveal">Whether it's a data question that keeps getting answered three different ways, or a mission that's outgrown its spreadsheets — the job is the same: understand the real problem, then build the smallest thing that truly solves it.</p>
+    <div class="cards">
+      <div class="card reveal">
+        <span class="glyph" aria-hidden="true">📊</span>
+        <h3>Data &amp; Analytics</h3>
+        <p class="tagline">From spreadsheet sprawl to a source of truth.</p>
+        <ul>
+          <li><strong>Pipelines &amp; warehouses</strong> — ingest, model, and document your data so it stays trustworthy as you grow.</li>
+          <li><strong>Dashboards &amp; metrics</strong> — the numbers people actually check, defined once and agreed on.</li>
+          <li><strong>Analysis &amp; decision support</strong> — ad-hoc questions answered with real rigor, not vibes.</li>
+          <li><strong>AI-assisted workflows</strong> — automation where it helps, human judgment where it matters.</li>
+        </ul>
+      </div>
+      <div class="card reveal">
+        <span class="glyph" aria-hidden="true">🕊️</span>
+        <h3>Software for Life &amp; Civil Society</h3>
+        <p class="tagline">The tools the big vendors won't build.</p>
+        <ul>
+          <li><strong>For the public realm</strong> — nonprofits, civic groups, schools, co-ops, community organizations, and small teams doing real work.</li>
+          <li><strong>Right-sized tools</strong> — websites, internal apps, forms, maps, and databases scaled to your mission and your budget.</li>
+          <li><strong>Fixing the duct tape</strong> — replace brittle spreadsheets and half-fitting SaaS with something made for the job.</li>
+          <li><strong>Built to hand off</strong> — documented, maintainable, and yours. No lock-in.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="approach">
+  <div class="wrap">
+    <p class="kicker reveal">How I work</p>
+    <h2 class="reveal">Use what you have. Build what you need.</h2>
+    <p class="section-lead reveal">Every engagement starts with the same question: does this call for the tool at hand, or a better one? Getting that answer right — over and over, at every scale — is most of the craft.</p>
+    <div class="steps">
+      <div class="step reveal">
+        <span class="num">01</span>
+        <h3>Listen for the bell</h3>
+        <p>Start with what already exists. Sometimes the right answer is a better spreadsheet, a cleaned-up process, or one honest conversation about the metric — not a new system.</p>
+      </div>
+      <div class="step reveal">
+        <span class="num">02</span>
+        <h3>Follow the blackbird</h3>
+        <p>When something new is called for, build it: small, sharp, and shippable in days to weeks. Modern cloud, lightweight tooling, and AI make this faster than it has ever been.</p>
+      </div>
+      <div class="step reveal">
+        <span class="num">03</span>
+        <h3>Leave it singing</h3>
+        <p>Every tool ships with documentation and a handoff so your team owns it outright. You should depend on your software — never on your consultant.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="name">
+  <div class="wrap">
+    <p class="kicker reveal">The name</p>
+    <h2 class="reveal">The bell, or the blackbird?</h2>
+    <div class="poem-grid">
+      <blockquote class="reveal">
+        The sound of a bell<br>
+        still reverberating,<br>
+        or a blackbird calling<br>
+        from the corner of a field.<br>
+        Asking you to wake<br>
+        into this life<br>
+        or inviting you deeper<br>
+        into the one that waits.
+        <footer>— David Whyte, <a href="https://davidwhyte.com/" rel="noopener">“The Bell and the Blackbird”</a></footer>
+      </blockquote>
+      <div class="poem-note reveal">
+        <p>The poem is about a choice we keep making: to live in the world as it is, or to build the one that could be. <strong>Both callings are true, and both take courage.</strong></p>
+        <p>The same choice runs through this work. With every problem — every feature, every query, every line of code — you can reach for the tool at hand or craft one that fits better. Knowing which call to answer, decision by decision, is the work of a lifetime.</p>
+        <p>That tension is the practice. Hence the name.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="about">
+  <div class="wrap">
+    <p class="kicker reveal">About</p>
+    <h2 class="reveal">Hi, I'm Ryan.</h2>
+    <div class="about-grid reveal">
+      <img src="/assets/ryan.png" alt="Ryan Kladar" loading="lazy" onerror="this.style.display='none'">
+      <div>
+        <p>I've spent my career at the intersection of <strong>software, data, and energy</strong> — building pipelines, products, and analysis for teams working on hard, real-world problems.</p>
+        <p>Blackbird Bell began in the energy transition, helping the people writing essential policy and putting infrastructure in the ground. That work taught me something that generalizes: <strong>domain experts shouldn't have to become software experts</strong> to get tools that fit. So the practice has grown to serve anyone with a data problem worth solving or a mission worth building for.</p>
+        <p>You're the expert in your domain. I take the software and analytics off your plate so you can get back to what you do best.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="wrap">
+    <p class="kicker reveal">Contact</p>
+    <h2 class="reveal">Tell me about your problem.</h2>
+    <p class="section-lead reveal">A short email is plenty — what you're trying to do, and what's in the way. I'll reply with an honest take on whether and how I can help.</p>
+    <div class="reveal">
+      <a class="btn btn-gold" href="mailto:ryan@blackbirdbell.com?subject=Let%27s%20talk">ryan@blackbirdbell.com</a>
+      <div class="social-row">
+        <a href="https://github.com/kladar" rel="noopener">GitHub</a>
+        <a href="https://www.linkedin.com/in/ryan-kladar" rel="noopener">LinkedIn</a>
+        <a href="https://twitter.com/rkladar" rel="noopener">Twitter</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="site">
+  <span class="bell">◉</span> &nbsp;Blackbird Bell · © 2026 · Built by hand, served from the edge.
+</footer>
+
+<script>
+  const io = new IntersectionObserver((entries)=>{
+    for(const e of entries){ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } }
+  },{threshold:.12});
+  document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+</script>
+</body>
+</html>

@@ -1,0 +1,16 @@
+{
+  // Cloudflare Workers static-assets config for the Blackbird Bell landing page.
+  // Deploy with: npx wrangler deploy
+  "name": "blackbirdbell-landing-page",
+  "compatibility_date": "2026-07-04",
+  "assets": {
+    "directory": "./public",
+    "not_found_handling": "404-page"
+  }
+  // Once the blackbirdbell.com zone is on this Cloudflare account, uncomment to
+  // bind the custom domain and redeploy:
+  // ,"routes": [
+  //   { "pattern": "blackbirdbell.com", "custom_domain": true },
+  //   { "pattern": "www.blackbirdbell.com", "custom_domain": true }
+  // ]
+}
