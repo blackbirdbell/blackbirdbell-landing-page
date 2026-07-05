@@ -7,10 +7,8 @@
     "directory": "./public",
     "not_found_handling": "404-page"
   }
-  // Once the blackbirdbell.com zone is on this Cloudflare account, uncomment to
-  // bind the custom domain and redeploy:
-  // ,"routes": [
-  //   { "pattern": "blackbirdbell.com", "custom_domain": true },
-  //   { "pattern": "www.blackbirdbell.com", "custom_domain": true }
-  // ]
+  ,"routes": [
+    { "pattern": "blackbirdbell.com", "custom_domain": true },
+    { "pattern": "www.blackbirdbell.com", "custom_domain": true }
+  ]
 }
